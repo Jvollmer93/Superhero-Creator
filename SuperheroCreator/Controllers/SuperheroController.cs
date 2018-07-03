@@ -14,12 +14,13 @@ namespace SuperheroCreator.Controllers
         // GET: Superhero
         public ActionResult Index()
         {
-            ViewBag.superheroId = new SelectList(db.Superheroes, "ID", "Name");
-            return View();
+            var view = db.Superheroes.ToList();
+            return View(view);
         }
         //GET
         public ActionResult Create()
         {
+
             return View();
         }
         [HttpPost]
