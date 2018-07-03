@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SuperheroCreator.Models;
@@ -41,6 +42,10 @@ namespace SuperheroCreator.Controllers
                 return RedirectToAction("Index");
             }
             Superhero superhero = db.Superheroes.Find(id);
+            if (superhero == null)
+            {
+                return HttpNotFound();
+            }
             return View(superhero);
         }
         [HttpPost]
@@ -51,6 +56,20 @@ namespace SuperheroCreator.Controllers
                 db.Entry(superhero).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
+            }
+            return View(superhero);
+        }
+        //Get
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Superhero superhero = db.Superheroes.Find(id);
+            if (superhero == null)
+            {
+                return HttpNotFound();
             }
             return View(superhero);
         }
