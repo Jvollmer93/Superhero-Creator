@@ -338,6 +338,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\12803235_10153958150817641_2318214308265652861_n.jpg" />
     <Content Include="Images\DP.jpg" />
+    <Content Include="Images\Groot.jpg" />
     <Content Include="obj\Debug\SuperheroCreator.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SuperheroCreator.dll" />
     <Content Include="obj\Debug\SuperheroCreator.pdb" />
