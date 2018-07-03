@@ -8,7 +8,6 @@ using System.Web;
 namespace SuperheroCreator.Models
 {
 
-    //[Table("Superheroes")]
     public class Superhero
     {
         [Key]
