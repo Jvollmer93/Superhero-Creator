@@ -73,5 +73,29 @@ namespace SuperheroCreator.Controllers
             }
             return View(superhero);
         }
+        //GET
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Superhero superhero = db.Superheroes.Find(id);
+            if (superhero == null)
+            {
+                return HttpNotFound();
+            }
+            return View(superhero);
+        }
+        //POST
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Superhero superhero = db.Superheroes.Find(id);
+            db.Superheroes.Remove(superhero);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
