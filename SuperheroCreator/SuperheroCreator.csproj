@@ -198,12 +198,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SuperheroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201807021402233_InitialMigration.cs" />
     <Compile Include="Migrations\201807021402233_InitialMigration.Designer.cs">
       <DependentUpon>201807021402233_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807021945279_adding Superhero.cs" />
+    <Compile Include="Migrations\201807021945279_adding Superhero.Designer.cs">
+      <DependentUpon>201807021945279_adding Superhero.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -214,6 +219,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-lux.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -272,6 +278,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Superhero\Create.cshtml" />
+    <Content Include="Views\Superhero\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -292,6 +300,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807021402233_InitialMigration.resx">
       <DependentUpon>201807021402233_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807021945279_adding Superhero.resx">
+      <DependentUpon>201807021945279_adding Superhero.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
