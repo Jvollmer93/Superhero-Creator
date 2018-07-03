@@ -20,7 +20,6 @@ namespace SuperheroCreator.Controllers
         //GET
         public ActionResult Create()
         {
-
             return View();
         }
         [HttpPost]
@@ -35,9 +34,14 @@ namespace SuperheroCreator.Controllers
             return View(superhero);
         }
         //GET
-        public ActionResult Edit()
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if(id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            Superhero superhero = db.Superheroes.Find(id);
+            return View(superhero);
         }
         [HttpPost]
         public ActionResult Edit([Bind(Include ="Id,Name,AlterEgo,PrimaryAbility,SecondaryAbility,CatchPhrase")] Superhero superhero)
